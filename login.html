@@ -28,114 +28,78 @@
   </head>
   
   <body>
-    
-    <header id="header" class="fixed-top">
-            <h1 class="logo me-auto me-lg-0"><a href="index.html"><span>StellarX</span></a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-    </header><!-- End Header -->
-
-    <div class="container" id="container">
-      
-      <div class="form-container sign-up-container">
-       <form action="#">
-        <h1 id="title">Create Account</h1>
-			  <div class="social-container">
-				  <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
-				  <a href="#" class="social"><i class="fab fa-google"></i></a>
-          
-			  </div>
-        <span>Or use your email for registration</span>
-          <label for="name" id="name-label">
-          <input type="text" id="name" placeholder="Name" name="name" required /></label>
-          <label for="email" id="email-label">
-          <input type="email" id="email" placeholder="Email" name="email" required /></label>
-          <label for="password" id="password-label">
-		  <input type="password" id="password" placeholder="Password" name="password" required /></label>
-		  <label for="t_and_c" style="display: flex; align-items: center;">
-          <input name="t_and_c" type="checkbox" id="t_and_c" style="margin-right: 0;" required> 
-          <span style="white-space: nowrap;">&nbsp;I agree with all statements in <a href="#!" class="text-body" style="text-decoration: none; color: rgb(0, 0, 0);"><u>Terms of service</u></a></span>
-          </label>
-          
-          <button type="button" onclick="validateSignUp()">Sign Up</button>
-		  </form>
-    </div>
-      
-    <div class="form-container sign-in-container">
-       <form action="#">
-			<h1 id="title">Sign in</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
-				  <a href="#" class="social"><i class="fab fa-google"></i></a>
-			</div>
-			<span>Or use your account</span>
-			<label for="email1" id="email1-label">
-            <input type="email1" id="email1" placeholder="Email" name="email1" required /></label>
-            <label for="password1" id="password1-label">
-			<input type="password1" id="password1" placeholder="Password" name="password1" required /></label>
-			<a href="#">Forgot your password?</a>
-
-			<button type="button" onclick="validateSignIn()">Sign In</button>
-		</form>
-    </div>
-      
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1 id="title">Welcome!</h1>
-				<p>Already One Of Us?<br>Then Click Below<br></p>
-				<button class="ghost" id="signIn">Sign In</button>
-          </div>
-          
-          <div class="overlay-panel overlay-right">
-            <h1 id="title">Hello!</h1>
-				<p>New Member?<br>Then Register By<br> Clicking Below<br></p>
-				<button class="ghost" id="signUp">Sign Up</button>
-          </div>
+   
+    <a href="index.html" class="logo" >
+      <h2><b>STELLARX</b></h2>
+    </a>
+  
+    <div class="section">
+      <div class="container">
+        <div class="row full-height justify-content-center">
+          <div class="col-12 text-center align-self-center py-5">
+            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+              <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+                    <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                    <label for="reg-log"></label>
+              <div class="card-3d-wrap mx-auto">
+                <div class="card-3d-wrapper">
+                  <div class="card-front">
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-4 pb-3">Log In</h4>
+                        <div class="form-group">
+                          <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                          <i class="input-icon uil uil-at"></i>
+                        </div>	
+                        <div class="form-group mt-2">
+                          <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <a href="#" class="btn mt-4">submit</a>
+                                      <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+                          </div>
+                        </div>
+                      </div>
+                  <div class="card-back">
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-4 pb-3">Sign Up</h4>
+                        <div class="form-group">
+                          <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+                          <i class="input-icon uil uil-user"></i>
+                        </div>	
+                        <div class="form-group mt-2">
+                          <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                          <i class="input-icon uil uil-at"></i>
+                        </div>	
+                        <div class="form-group mt-2">
+                          <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <a href="#" class="btn mt-4">submit</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
-      </div>
     </div>
-    <script>
-        const signUpButton = document.getElementById('signUp');
-        const signInButton = document.getElementById('signIn');
-        const container = document.getElementById('container');
 
-        signUpButton.addEventListener('click', () => {
-        container.classList.add("right-panel-active");
-        });
-
-        signInButton.addEventListener('click', () => {
-        container.classList.remove("right-panel-active");
-        });
-
-        function validateSignUp() {
-              var username = document.getElementById("name").value;
-              var email = document.getElementById("email").value;
-              var password = document.getElementById("password").value;
-              var checkbox = document.getElementById("t_and_c").value;
- 
-              
-                if ((username === "Debdeep"||"Nabhonil"||"Kanishk"||"Anwayee") && email==="debdeep3613@gmail.com" && password === "1234") {
-                    window.location.href = "next_index.html"
-                } else {
-                    alert("Invalid username or password. Please try again.");
-                }
-                
-          }
-        
-          function validateSignIn() {
-              var email1 = document.getElementById("email1").value;
-              var password1 = document.getElementById("password1").value;
-              
-              if ((email1 === "debdeep3613@gmail.com") && password1 === "1234") {
-                  window.location.href = "next_index.html"
-              } else {
-                  alert("Invalid username or password. Please try again.");
-              }
-          }
-      
-    </script>
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+  
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
