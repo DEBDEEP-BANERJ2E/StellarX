@@ -14,6 +14,9 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
+    .profile-text {
+        color: #000;
+    }
         body {
             font-family: "Open Sans", sans-serif;
             margin: 0;
@@ -246,27 +249,7 @@
             display: none;
         }
 
-        .email {
-            color: #000;
-        }
-
-        .email-inline {
-            color: #000;
-        }
-
-        .profile-details .email,
-        .email-inline,
-        .email-inline,
-        .email-inline,
-        .email {
-            color: #000;
-        }
-
-        .email-inline {
-            color: #000;
-        }
-
-        .profile-username {
+        .profile-text {
             color: #000;
         }
 
@@ -275,17 +258,8 @@
             color: #ffc451;
             text-decoration: none;
         }
-
-        .profile-detail {
-            color: #000;
-        }
-
-        .email {
-            color: #000;
-        }
     </style>
 </head>
-        <h1><a href="index.html" class="stellarx-link">STELLARX</a></h1>
 <body>
 
     <header>
@@ -296,14 +270,12 @@
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
-            <p class="profile-detail">User Name: John Doe</p>
-            <p class="email-inline">Email: john97@gmail.com</p>
         <div class="profile" onclick="toggleProfileDetails()">👤</div>
         <div class="profile-details" id="profileDetails">
-            <p class="email-inline">Email: john97@gmail.com</p>
-            <!-- <p style="color: #000;">Email: john97@gmail.com</p> -->
+            <p class="profile-text">User Name: John Doe</p>
+            <p class="profile-text">Email: john97@gmail.com</p>
         </div>
-            <p class="email-inline">Email: john97@gmail.com</p>
+    </header>
 
     <div class="container">
         <div class="left-panel">
@@ -352,7 +324,7 @@
             <div class="coordinates-container">
                 <input type="text" id="latitude" placeholder="Enter latitude">
                 <input type="text" id="longitude" placeholder="Enter longitude">
-                <button id="updateButton" onclick="updateMap('main')">Update Map</button>
+                <button id="updateButtonMain" onclick="updateMap('main')">Update Map</button>
             </div>
             <div id="map"></div>
         </div>
