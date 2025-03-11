@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
 
     <meta charset="UTF-8">
@@ -41,9 +41,9 @@
        <form action="#">
         <h1 id="title">Create Account</h1>
 			  <div class="social-container">
-				  <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
-				  <a href="#" class="social"><i class="fab fa-google"></i></a>
+          <a href="#" class="social" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social" title="Google"><i class="fab fa-google"></i></a>
           
 			  </div>
         <span>Or use your email for registration</span>
@@ -53,9 +53,9 @@
           <input type="email" id="email" placeholder="Email" name="email" required /></label>
           <label for="password" id="password-label">
 		  <input type="password" id="password" placeholder="Password" name="password" required /></label>
-		  <label for="t_and_c" style="display: flex; align-items: center;">
-          <input name="t_and_c" type="checkbox" id="t_and_c" style="margin-right: 0;" required> 
-          <span style="white-space: nowrap;">&nbsp;I agree with all statements in <a href="#!" class="text-body" style="text-decoration: none; color: rgb(0, 0, 0);"><u>Terms of service</u></a></span>
+      <label for="t_and_c" id="t_and_c-label">
+          <input name="t_and_c" type="checkbox" id="t_and_c" required> 
+          <span class="no-wrap">&nbsp;I agree with all statements in <a href="#!" class="text-body"><u>Terms of service</u></a></span>
           </label>
           
           <button type="button" onclick="validateSignUp()">Sign Up</button>
@@ -66,9 +66,9 @@
        <form action="#">
 			<h1 id="title">Sign in</h1>
 			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
-				  <a href="#" class="social"><i class="fab fa-google"></i></a>
+        <a href="#" class="social" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social" title="Google"><i class="fab fa-google"></i></a>
 			</div>
 			<span>Or use your account</span>
 			<label for="email1" id="email1-label">
