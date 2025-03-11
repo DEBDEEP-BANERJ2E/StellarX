@@ -23,16 +23,28 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App-header  :hover{
+  background-color: rgb(75, 75, 214);
+  color: bisque;
+}
 
 .App-link {
   color: #61dafb;
+  font-weight: 500;
+  border: 2px black underline;
+  font-size: medium;
+  box-shadow: #282c34;
 }
 
 @keyframes App-logo-spin {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  50% {
+    transform: rotate(180deg);
+  }
+  100%
+  {
     transform: rotate(360deg);
   }
 }
