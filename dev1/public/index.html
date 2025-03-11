@@ -5,6 +5,15 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <script>
+      if (!('theme-color' in document.createElement('meta'))) {
+        document.querySelector('meta[name="theme-color"]').remove();
+        var meta = document.createElement('meta');
+        meta.name = 'theme-color';
+        meta.content = '#000000';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+      }
+    </script>
     <meta
       name="description"
       content="Web site created using create-react-app"
