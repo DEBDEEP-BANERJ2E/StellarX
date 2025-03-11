@@ -1737,3 +1737,7 @@ button {
   background: #E74B37;
 }
 
+/* Add your custom styles here */
+.features-image {
+  background-image: url("assets/img/features.jpg");
+}

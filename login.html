@@ -111,30 +111,32 @@
         });
 
         function validateSignUp() {
-              var username = document.getElementById("name").value;
-              var email = document.getElementById("email").value;
-              var password = document.getElementById("password").value;
-              var checkbox = document.getElementById("t_and_c").value;
- 
-              
-                if ((username === "Debdeep"||"Nabhonil"||"Kanishk"||"Anwayee") && email==="debdeep3613@gmail.com" && password === "1234") {
-                    window.location.href = "next_index.html"
-                } else {
-                    alert("Invalid username or password. Please try again.");
-                }
-                
-          }
+            var username = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var checkbox = document.getElementById("t_and_c").checked;
+
+            if (username && email && password && checkbox) {
+                // Redirect to the next page if all fields are filled and T&C is checked
+                window.location.href = "next_index.html";
+            } else {
+                alert("Please fill in all fields and agree to the Terms of Service.");
+            }
+        }
+
         
-          function validateSignIn() {
-              var email1 = document.getElementById("email1").value;
-              var password1 = document.getElementById("password1").value;
-              
-              if ((email1 === "debdeep3613@gmail.com") && password1 === "1234") {
-                  window.location.href = "next_index.html"
-              } else {
-                  alert("Invalid username or password. Please try again.");
-              }
-          }
+        function validateSignIn() {
+            var email1 = document.getElementById("email1").value;
+            var password1 = document.getElementById("password1").value;
+
+            if (email1 && password1) {
+                // Redirect to the next page if email and password fields are filled
+                window.location.href = "next_index.html";
+            } else {
+                alert("Please enter both email and password.");
+            }
+        }
+
       
     </script>
   </body>

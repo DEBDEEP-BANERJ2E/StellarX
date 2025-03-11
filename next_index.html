@@ -246,27 +246,64 @@
             display: none;
         }
 
+        .email {
+            color: #000;
+        }
+
+        .email-inline {
+            color: #000;
+        }
+
+        .profile-details .email,
+        .email-inline,
+        .email-inline,
+        .email-inline,
+        .email {
+            color: #000;
+        }
+
+        .email-inline {
+            color: #000;
+        }
+
+        .profile-username {
+            color: #000;
+        }
+
+        .stellarx-link {
+            display: flex;
+            color: #ffc451;
+            text-decoration: none;
+        }
+
+        .profile-detail {
+            color: #000;
+        }
+
+        .email {
+            color: #000;
+        }
     </style>
 </head>
-
+        <h1><a href="index.html" class="stellarx-link">STELLARX</a></h1>
 <body>
 
     <header>
 
-        <h1><a href="index.html" style="display: flex; color: #ffc451; text-decoration: none;">STELLARX</a></h1>
+        <h1><a href="index.html" class="stellarx-link">STELLARX</a></h1>
 
         <nav>
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
-        </nav>
-        
+            <p class="profile-detail">User Name: John Doe</p>
+            <p class="email-inline">Email: john97@gmail.com</p>
         <div class="profile" onclick="toggleProfileDetails()">👤</div>
         <div class="profile-details" id="profileDetails">
-            <p style="color: #000;">User Name: John Doe</p>
-            <p style="color: #000;">Email: john97@gmail.com</p>
+            <p class="email-inline">Email: john97@gmail.com</p>
+            <!-- <p style="color: #000;">Email: john97@gmail.com</p> -->
         </div>
-    </header>
+            <p class="email-inline">Email: john97@gmail.com</p>
 
     <div class="container">
         <div class="left-panel">
@@ -299,7 +336,7 @@
                 <!-- Your existing tools panel content -->
                     <input type="text" id="latitudeTools" placeholder="Enter latitude">
                     <input type="text" id="longitudeTools" placeholder="Enter longitude">
-                    <button id="updateButton" onclick="updateMap('tools')">Update Map</button>                                     
+                    <button id="updateButtonTools" onclick="updateMap('tools')">Update Map</button>                                     
             </div>
 
             <!-- Analysis Panel -->
@@ -307,7 +344,7 @@
                 <!-- Your existing analysis panel content -->
                     <input type="text" id="latitudeAnalysis" placeholder="Enter latitude">
                     <input type="text" id="longitudeAnalysis" placeholder="Enter longitude">
-                    <button id="updateButton" onclick="updateMap('analysis')">Update Map</button>
+                    <button id="updateButtonAnalysis" onclick="updateMap('analysis')">Update Map</button>
             </div>
         </div>
 
