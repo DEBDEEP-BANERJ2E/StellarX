@@ -1,0 +1,20 @@
+.icon-box {
+ 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.icon-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  
+}
+
+.icon-box i {
+
+  transition: color 0.3s ease-in-out;
+}
+.img-fluid{
+  transition: transform 0.3s ease-in-out;
+}
+.img-fluid:hover{
+  transform: scale(1.05);
+}
