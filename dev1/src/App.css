@@ -48,3 +48,29 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  background-color: #333; 
+}
+.navbar-item {
+  padding: 15px 20px; 
+  font-family: 'Arial', sans-serif; 
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .navbar-item:hover {
+    background-color: rgb(75, 75, 214); 
+    color: bisque; 
+  }
+
+  .navbar-item.active {
+    font-weight: bold; 
+    color: #61dafb; 
+  }
+  
+@media (max-width: 768px) {
+    .navbar {
+      flex-direction: column; 
+    }
+  }
