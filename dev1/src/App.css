@@ -22,6 +22,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-style: normal;
+  transition: ease-in;
 }
 .App-header  :hover{
   background-color: rgb(75, 75, 214);
@@ -50,7 +52,7 @@
 }
 
 .navbar {
-  background-color: #333; 
+  background-color: #252222; 
 }
 .navbar-item {
   padding: 15px 20px; 
@@ -62,11 +64,14 @@
   .navbar-item:hover {
     background-color: rgb(75, 75, 214); 
     color: bisque; 
+    font-weight: 600;
+    font-size: medium;
+    opacity: 0.5px;
   }
 
   .navbar-item.active {
     font-weight: bold; 
-    color: #61dafb; 
+    color: #81e0fa; 
   }
   
 @media (max-width: 768px) {
