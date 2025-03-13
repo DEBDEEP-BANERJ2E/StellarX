@@ -294,7 +294,12 @@ input {
   }
 }
 
-/* Add your custom styles here */
+
 .checkbox-style {
 	margin-right: 0;
+  }
+
+  #t_and_c-label {
+    display: inline-flex;
+    align-items: center;
   }

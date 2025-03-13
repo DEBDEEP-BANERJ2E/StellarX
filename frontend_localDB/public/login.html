@@ -51,12 +51,16 @@
           <input type="email" id="email" placeholder="Email" name="email" required /></label>
           <label for="password" id="password-label">
 		  <input type="password" id="password" placeholder="Password" name="password" required /></label>
+      <br>
       <label for="t_and_c" id="t_and_c-label">
-          <input name="t_and_c" type="checkbox" id="t_and_c" required> 
-          <span class="no-wrap">&nbsp;I agree with all statements in <a href="#!" class="text-body"><u>Terms of service</u></a></span>
-          </label>
-          
-          <button type="button" onclick="validateSignUp()">Sign Up</button>
+        <input name="t_and_c" type="checkbox" id="t_and_c" required>
+        <span>I agree with all statements in
+            <a href="#!" class="text-body"><u>Terms of service</u></a>
+        </span>
+    </label>
+    <br>
+    <button type="button" onclick="validateSignUp()">Sign Up</button>
+    
 		  </form>
     </div>
       
@@ -76,6 +80,7 @@
 			<a href="#">Forgot your password?</a>
 
 			<button type="button" onclick="validateSignIn()">Sign In</button>
+      <a href="next_index.html">To go to the dashboard without logging in</a>
 		</form>
     </div>
       
