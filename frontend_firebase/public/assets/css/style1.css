@@ -103,11 +103,12 @@ button {
 	font-weight: bold;
 	padding: 12px 45px;
 	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+	transition: transform 0.3s ease-in-out , background-color 0.3s ease-in-out;
 }
 
-button:active {
-	transform: scale(0.95);
+button:hover {
+	transform: scale(1.05);
+	background-color: #3f92a2;
 }
 
 button:focus {
@@ -117,6 +118,11 @@ button:focus {
 button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
+}
+
+button.ghost:hover {
+	background-color: #e3eaec;
+	color: #0a343c;
 }
 
 form {
