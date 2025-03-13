@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StellarX</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+    .profile-text {
+        color: #000;
+    }
+        body {
+            font-family: "Open Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            font-family: "Open Sans", sans-serif;
+            padding: 7px 40px;
+            background-color: #000000;
+            color:  #ffc451;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav {
+            font-family: "Open Sans", sans-serif;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+        }
+
+        nav a {
+            font-family: "Open Sans", sans-serif;
+            color:  #ffc451;
+            text-decoration: none;
+            padding: 8px 100px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            font-family: "Open Sans", sans-serif;
+            background-color: #666;
+        }
+
+        .profile {
+            cursor: pointer;
+        }
+
+        .profile-details {
+            font-family: "Open Sans", sans-serif;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #ffc451;
+            border: 1px solid #ffc451;
+            padding: 4px 10px;
+            display: none;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            flex: 1;
+        }
+
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            min-width: 300px;
+            max-width: 300px;
+        }
+
+        .right-panel {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .navigation-bar {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+
+        .tab {
+            padding: 8px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .tab:hover {
+            background-color: #777;
+        }
+
+        .speech-function {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-container {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            padding: 10px;
+            height: 100%;
+            overflow-y: auto;
+            background-color: #fff;
+        }
+
+        .user-message,
+        .assistant-message {
+            margin: 5px;
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            background-color: #3498db;
+            color: #fff;
+            align-self: flex-end;
+        }
+
+        .assistant-message {
+            background-color: #e1e1e1;
+            color: #333;
+            align-self: flex-start;
+        }
+
+        .input-container {
+            display: flex;
+            padding: 10px;
+            background-color: #fff;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        #attachmentButton,
+        #sendButton,
+        #audioButton {
+            width: 20%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        #sendButton {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        #audioButton,
+        #attachmentButton {
+            background-color: #fff;
+            color: #000;
+        }
+
+        #attachmentButton {
+            margin-right: 5px;
+        }
+
+        #userInput {
+            width: calc(50% - 5px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .coordinates-container {
+            padding: 10px;
+            background-color: #eee;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        #latitude,
+        #longitude {
+            margin: 5px;
+            padding: 8px;
+            width: 45%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #updateButton {
+            width: 20%;
+            padding: 8px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #map {
+            flex: 1;
+            height: 100%;
+        }
+
+        .leaflet-control-attribution {
+            display: none !important;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .profile-text {
+            color: #000;
+        }
+
+        .stellarx-link {
+            display: flex;
+            color: #ffc451;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <h1><a href="home.html" class="stellarx-link">STELLARX</a></h1>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        <div class="profile" onclick="toggleProfileDetails()">👤</div>
+        <div class="profile-details" id="profileDetails">
+            <p class="profile-text">User Name: John Doe</p>
+            <p class="profile-text">Email: john97@gmail.com</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="left-panel">
+            <div class="navigation-bar">
+                <div class="tabs">
+                    <button class="tab" onclick="changeTab('chatPanel')">Chat</button>
+                    <button class="tab" onclick="changeTab('toolsPanel')">Tools</button>
+                    <button class="tab" onclick="changeTab('analysisPanel')">Analysis</button>
+                </div>
+            </div>
+            <!-- Chat Panel -->
+            <div class="speech-function" id="chatPanel">
+                <!-- Your existing chat panel content -->
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="assistant-message">Hello! How can I help you today?</div>
+                    </div>
+                    <div class="input-container">
+                        <button id="attachmentButton" onclick="document.getElementById('fileInput').click()">📎</button>
+                        <input type="text" id="userInput" placeholder="Type here...">
+                        <button id="sendButton" onclick="sendMessage()">Send</button>
+                        <button id="audioButton" onclick="startSpeechRecognition()">🎤</button>
+                        <input type="file" id="fileInput" accept=".pdf, .jpg, .zip" onchange="attachFiles(this)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools Panel -->
+            <div class="coordinates-container hidden" id="toolsPanel">
+                <!-- Your existing tools panel content -->
+                    <input type="text" id="latitudeTools" placeholder="Enter latitude">
+                    <input type="text" id="longitudeTools" placeholder="Enter longitude">
+                    <button id="updateButtonTools" onclick="updateMap('tools')">Update Map</button>                                     
+            </div>
+
+            <!-- Analysis Panel -->
+            <div class="coordinates-container hidden" id="analysisPanel">
+                <!-- Your existing analysis panel content -->
+                    <input type="text" id="latitudeAnalysis" placeholder="Enter latitude">
+                    <input type="text" id="longitudeAnalysis" placeholder="Enter longitude">
+                    <button id="updateButtonAnalysis" onclick="updateMap('analysis')">Update Map</button>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="coordinates-container">
+                <input type="text" id="latitude" placeholder="Enter latitude">
+                <input type="text" id="longitude" placeholder="Enter longitude">
+                <button id="updateButtonMain" onclick="updateMap('main')">Update Map</button>
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        let map;
+
+        function initMap() {
+            map = L.map('map').setView([22.5726, 88.3639], 5);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: ''
+            }).addTo(map);
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const message = userInput.value.trim();
+            if (message === '') return;
+
+            appendMessage('user', message);
+
+            setTimeout(() => {
+                const response = "I'm just a simple example, but you can replace me with ChatGPT!";
+                appendMessage('assistant', response);
+                speak(response);
+            }, 500);
+
+            userInput.value = '';
+        }
+
+        function appendMessage(sender, message) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageElement = document.createElement('div');
+            messageElement.classList.add(sender + '-message');
+            messageElement.textContent = message;
+            chatMessages.appendChild(messageElement);
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function startSpeechRecognition() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'en-US';
+            recognition.onresult = function (event) {
+                const userMessage = event.results[0][0].transcript;
+                appendMessage('user', userMessage);
+                recognition.stop();
+
+                setTimeout(() => {
+                    const response = "I'm just a simple example, but you can replace me with ChatGPT!";
+                    appendMessage('assistant', response);
+                    speak(response);
+                }, 500);
+            };
+
+            recognition.start();
+        }
+
+        function speak(message) {
+            const speechSynthesis = window.speechSynthesis;
+            const speechMessage = new SpeechSynthesisUtterance(message);
+            speechSynthesis.speak(speechMessage);
+        }
+
+        function changeTab(tabName) {
+            document.getElementById('chatPanel').classList.add('hidden');
+            document.getElementById('toolsPanel').classList.add('hidden');
+            document.getElementById('analysisPanel').classList.add('hidden');
+
+            // Show the selected panel
+            if (tabName === 'chatPanel') {
+                document.getElementById('chatPanel').classList.remove('hidden');
+            } else if (tabName === 'toolsPanel') {
+                document.getElementById('toolsPanel').classList.remove('hidden');
+            } else if (tabName === 'analysisPanel') {
+                document.getElementById('analysisPanel').classList.remove('hidden');
+            }
+        }
+
+        function updateMap(panelType) {
+        // Hide all  panels
+
+        let latitude, longitude;
+
+        if (panelType === 'main') {
+            latitude = document.getElementById('latitude').value;
+            longitude = document.getElementById('longitude').value;
+        } else if (panelType === 'tools') {
+            latitude = document.getElementById('latitudeTools').value;
+            longitude = document.getElementById('longitudeTools').value;
+        } else if (panelType === 'analysis') {
+            latitude = document.getElementById('latitudeAnalysis').value;
+            longitude = document.getElementById('longitudeAnalysis').value;
+        }
+
+        if (!isNaN(latitude) && !isNaN(longitude)) {
+            map.panTo(new L.LatLng(latitude, longitude));
+        } else {
+            alert("Invalid latitude or longitude. Please enter valid numerical values.");
+        }
+        }
+
+
+        function attachFiles(input) {
+            const files = input.files;
+            for (const file of files) {
+                const fileName = file.name;
+                appendMessage('user', `Attached: ${fileName}`);
+            }
+
+            input.value = '';
+        }
+
+        function toggleProfileDetails() {
+            const profileDetails = document.getElementById('profileDetails');
+            profileDetails.style.display = profileDetails.style.display === 'none' ? 'block' : 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            initMap();
+        });
+    </script>
+
+</body>
+
+</html>
