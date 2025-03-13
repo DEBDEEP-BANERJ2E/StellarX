@@ -101,55 +101,76 @@
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
 
-    <script>
-    const firebaseConfig = {
-        apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-        projectId: "YOUR_PROJECT_ID",
-        storageBucket: "YOUR_PROJECT_ID.appspot.com",
-        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-        appId: "YOUR_APP_ID"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-
-    async function validateSignUp() {
-        var email = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
-        var checkbox = document.getElementById("t_and_c").checked;
-
-        if (!email || !password || !checkbox) {
-            alert("Please fill in all fields and agree to the Terms of Service.");
-            return;
-        }
-
-        try {
-            const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-            alert("Registration successful! Please log in.");
-            container.classList.remove("right-panel-active"); // Switch to login form
-        } catch (error) {
-            alert("Error: " + error.message);
-        }
-    }
-
-    async function validateSignIn() {
-        var email = document.getElementById("email1").value;
-        var password = document.getElementById("password1").value;
-
-        if (!email || !password) {
-            alert("Please enter both email and password.");
-            return;
-        }
-
-        try {
-            const userCredential = await auth.signInWithEmailAndPassword(email, password);
-            window.location.href = "next_index.html"; // Redirect after successful login
-        } catch (error) {
-            alert("Error: " + error.message);
-        }
-    }
-    </script>
+        <!-- Firebase SDK -->
+        <script type="module">
+            const signUpButton = document.getElementById('signUp');
+            const signInButton = document.getElementById('signIn');
+            const container = document.getElementById('container');
+        
+            signUpButton.addEventListener('click', () => {
+                container.classList.add("right-panel-active");
+            });
+        
+            signInButton.addEventListener('click', () => {
+                container.classList.remove("right-panel-active");
+            });
+            // Import Firebase modules
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+            import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+    
+            // Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyB_NMpy5qshp80uwgwAPpjpqYJM-S2QoV8",
+                authDomain: "stellarx-36c2f.firebaseapp.com",
+                projectId: "stellarx-36c2f",
+                storageBucket: "stellarx-36c2f.firebasestorage.app",
+                messagingSenderId: "88649527946",
+                appId: "1:88649527946:web:65b02f5637519de1637373",
+                measurementId: "G-FQM6HR432P"
+            };
+    
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+    
+            // Signup Function
+            window.validateSignUp = async function () {
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                var checkbox = document.getElementById("t_and_c").checked;
+    
+                if (!email || !password || !checkbox) {
+                    alert("Please fill in all fields and agree to the Terms of Service.");
+                    return;
+                }
+    
+                try {
+                    await createUserWithEmailAndPassword(auth, email, password);
+                    alert("Registration successful! Please log in.");
+                    document.getElementById('container').classList.remove("right-panel-active");
+                } catch (error) {
+                    alert("Error: " + error.message);
+                }
+            };
+    
+            // Signin Function
+            window.validateSignIn = async function () {
+                var email = document.getElementById("email1").value;
+                var password = document.getElementById("password1").value;
+    
+                if (!email || !password) {
+                    alert("Please enter both email and password.");
+                    return;
+                }
+    
+                try {
+                    await signInWithEmailAndPassword(auth, email, password);
+                    window.location.href = "next_index.html"; // Redirect after successful login
+                } catch (error) {
+                    alert("Error: " + error.message);
+                }
+            };
+        </script>
+    
   </body>
 </html>
