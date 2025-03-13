@@ -70,9 +70,9 @@
 			</div>
 			<span>Or use your account</span>
 			<label for="email1" id="email1-label">
-            <input type="email1" id="email1" placeholder="Email" name="email1" required /></label>
+            <input type="email" id="email1" placeholder="Email" name="email1" required /></label>
             <label for="password1" id="password1-label">
-			<input type="password1" id="password1" placeholder="Password" name="password1" required /></label>
+			<input type="password" id="password1" placeholder="Password" name="password1" required /></label>
 			<a href="#">Forgot your password?</a>
 
 			<button type="button" onclick="validateSignIn()">Sign In</button>
@@ -142,15 +142,15 @@
       }
   
       async function validateSignIn() {
-          var username = document.getElementById("email1").value;
+          var email = document.getElementById("email1").value;
           var password = document.getElementById("password1").value;
   
-          if (!username || !password) {
+          if (!email || !password) {
               alert("Please enter both username and password.");
               return;
           }
   
-          const requestBody = { username, password };
+          const requestBody = { email, password };
   
           try {
               const response = await fetch("http://localhost:5001/api/auth/login", {
