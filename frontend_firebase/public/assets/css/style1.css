@@ -125,7 +125,7 @@ form {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 0 50px;
+	padding: 10px 50px;
 	height: 100%;
 	text-align: center;
 }
@@ -147,7 +147,7 @@ input {
 	overflow: hidden;
 	width: 80%;
 	max-width: 100%;
-	min-height: 480px;
+	min-height: 550px;
 }
 
 .form-container {
@@ -298,3 +298,9 @@ input {
 .checkbox-style {
 	margin-right: 0;
   }
+
+  #t_and_c-label {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Adjust spacing between checkbox and text */
+}

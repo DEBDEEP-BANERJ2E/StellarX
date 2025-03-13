@@ -47,7 +47,6 @@ const registerUser = async (req, res) => {
   }
 
   try {
-    // Check if the email is already registered
     const [existingUser] = await pool.execute('SELECT * FROM users WHERE email = ?', [email]);
 
     if (existingUser.length > 0) {
