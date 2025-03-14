@@ -104,74 +104,139 @@
 
         <!-- Firebase SDK -->
         <script type="module">
-            const signUpButton = document.getElementById('signUp');
-            const signInButton = document.getElementById('signIn');
-            const container = document.getElementById('container');
-        
-            signUpButton.addEventListener('click', () => {
-                container.classList.add("right-panel-active");
-            });
-        
-            signInButton.addEventListener('click', () => {
-                container.classList.remove("right-panel-active");
-            });
-            // Import Firebase modules
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-            import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
-    
-            // Firebase configuration
-            const firebaseConfig = {
-                apiKey: "AIzaSyB_NMpy5qshp80uwgwAPpjpqYJM-S2QoV8",
-                authDomain: "stellarx-36c2f.firebaseapp.com",
-                projectId: "stellarx-36c2f",
-                storageBucket: "stellarx-36c2f.firebasestorage.app",
-                messagingSenderId: "88649527946",
-                appId: "1:88649527946:web:65b02f5637519de1637373",
-                measurementId: "G-FQM6HR432P"
-            };
-    
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const auth = getAuth(app);
-    
-            // Signup Function
-            window.validateSignUp = async function () {
-                var email = document.getElementById("email").value;
-                var password = document.getElementById("password").value;
-                var checkbox = document.getElementById("t_and_c").checked;
-    
-                if (!email || !password || !checkbox) {
-                    alert("Please fill in all fields and agree to the Terms of Service.");
-                    return;
-                }
-    
-                try {
-                    await createUserWithEmailAndPassword(auth, email, password);
-                    alert("Registration successful! Please log in.");
-                    document.getElementById('container').classList.remove("right-panel-active");
-                } catch (error) {
-                    alert("Error: " + error.message);
-                }
-            };
-    
-            // Signin Function
-            window.validateSignIn = async function () {
-                var email = document.getElementById("email1").value;
-                var password = document.getElementById("password1").value;
-    
-                if (!email || !password) {
-                    alert("Please enter both email and password.");
-                    return;
-                }
-    
-                try {
-                    await signInWithEmailAndPassword(auth, email, password);
-                    window.location.href = "next_index.html"; // Redirect after successful login
-                } catch (error) {
-                    alert("Error: " + error.message);
-                }
-            };
-        </script>
+          const signUpButton = document.getElementById('signUp');
+          const signInButton = document.getElementById('signIn');
+          const container = document.getElementById('container');
+      
+          signUpButton.addEventListener('click', () => {
+              container.classList.add("right-panel-active");
+          });
+      
+          signInButton.addEventListener('click', () => {
+              container.classList.remove("right-panel-active");
+          });
+      
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+          import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+      
+          const firebaseConfig = {
+              apiKey: "AIzaSyB_NMpy5qshp80uwgwAPpjpqYJM-S2QoV8",
+              authDomain: "stellarx-36c2f.firebaseapp.com",
+              projectId: "stellarx-36c2f",
+              storageBucket: "stellarx-36c2f.firebasestorage.app",
+              messagingSenderId: "88649527946",
+              appId: "1:88649527946:web:65b02f5637519de1637373",
+              measurementId: "G-FQM6HR432P"
+          };
+      
+          const app = initializeApp(firebaseConfig);
+          const auth = getAuth(app);
+      
+          function showErrorMessage(inputId, message) {
+              let errorElement = document.getElementById(`${inputId}-error`);
+              if (!errorElement) {
+                  errorElement = document.createElement("p");
+                  errorElement.id = `${inputId}-error`;
+                  errorElement.style.color = "red";
+                  errorElement.style.fontSize = "14px";
+                  errorElement.style.marginTop = "5px";
+                  document.getElementById(inputId).insertAdjacentElement("afterend", errorElement);
+              }
+              errorElement.innerText = message;
+          }
+      
+          function clearErrorMessage(inputId) {
+              let errorElement = document.getElementById(`${inputId}-error`);
+              if (errorElement) {
+                  errorElement.innerText = "";
+              }
+          }
+      
+          function validateEmail(email) {
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              return emailRegex.test(email);
+          }
+      
+          function validatePassword(password) {
+              return password.length >= 6; // Minimum password length requirement
+          }
+      
+          window.validateSignUp = async function () {
+              var name = document.getElementById("name").value.trim();
+              var email = document.getElementById("email").value.trim();
+              var password = document.getElementById("password").value.trim();
+              var checkbox = document.getElementById("t_and_c").checked;
+      
+              let isValid = true;
+      
+              if (!name) {
+                  showErrorMessage("name", "Name is required.");
+                  isValid = false;
+              } else {
+                  clearErrorMessage("name");
+              }
+      
+              if (!validateEmail(email)) {
+                  showErrorMessage("email", "Invalid email format.");
+                  isValid = false;
+              } else {
+                  clearErrorMessage("email");
+              }
+      
+              if (!validatePassword(password)) {
+                  showErrorMessage("password", "Password must be at least 6 characters.");
+                  isValid = false;
+              } else {
+                  clearErrorMessage("password");
+              }
+      
+              if (!checkbox) {
+                  alert("Please agree to the Terms of Service.");
+                  isValid = false;
+              }
+      
+              if (!isValid) return;
+      
+              try {
+                  await createUserWithEmailAndPassword(auth, email, password);
+                  alert("Registration successful! Please log in.");
+                  container.classList.remove("right-panel-active");
+              } catch (error) {
+                  alert("Error: " + error.message);
+              }
+          };
+      
+          window.validateSignIn = async function () {
+              var email = document.getElementById("email1").value.trim();
+              var password = document.getElementById("password1").value.trim();
+      
+              let isValid = true;
+      
+              if (!validateEmail(email)) {
+                  showErrorMessage("email1", "Invalid email format.");
+                  isValid = false;
+              } else {
+                  clearErrorMessage("email1");
+              }
+      
+              if (!validatePassword(password)) {
+                  showErrorMessage("password1", "Password must be at least 6 characters.");
+                  isValid = false;
+              } else {
+                  clearErrorMessage("password1");
+              }
+      
+              if (!isValid) return;
+      
+              try {
+                  await signInWithEmailAndPassword(auth, email, password);
+                  window.location.href = "next_index.html";
+              } catch (error) {
+                  alert("Error: " + error.message);
+              }
+          };
+      </script>
+      
     
   </body>
 </html>
