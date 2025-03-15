@@ -1,4 +1,8 @@
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -193,8 +197,20 @@ h6 {
   align-items: center;
 }
 
-.navbar li {
+nav ul li {
+  display: inline;
+  margin: 0 15px;
   position: relative;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
 }
 
 .navbar a,
@@ -406,6 +422,12 @@ h6 {
   background: url("../img/hero-bg.jpg") top center;
   background-size: cover;
   position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
 }
 
 #hero:before {
@@ -433,6 +455,21 @@ h6 {
   font-family: "Poppins", sans-serif;
 }
 
+.btn:hover {
+  background: #C70039;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin: 20px 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 #hero h1 span {
   color: #ffc451;
 }
@@ -1446,6 +1483,19 @@ button {
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 10px 0 5px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 
 #footer .footer-top {

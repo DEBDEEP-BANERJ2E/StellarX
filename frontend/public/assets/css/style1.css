@@ -41,8 +41,16 @@ body {
     z-index: 997;
     padding: 19px 0;
     font-family: "Open Sans", sans-serif;
+	background: #007BFF;
+    color: #fff;
+    text-align: center;
   }
   
+  header h1 {
+    margin-bottom: 10px;
+}
+
+
   #header.header-scrolled,
   #header.header-inner-pages {
     background: rgba(0, 0, 0, 0.8);
