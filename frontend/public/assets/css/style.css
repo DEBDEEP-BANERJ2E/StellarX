@@ -5,13 +5,15 @@ body {
 }
 
 a {
-  color: #ffc451;
+  color: #debf20;
   text-decoration: none;
 }
 
 a:hover {
-  color: #ffd584;
+  color: #e9c10d;
   text-decoration: none;
+  border:2px red underline;
+  font-weight: 550;
 }
 
 h1,
@@ -33,7 +35,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #ffc451;
+  background: linear-gradient(rgb(233, 187, 3),rgb(236, 97, 4));
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -51,7 +53,7 @@ h6 {
 }
 
 .back-to-top:hover i {
-  color: #ffc451;
+  color: #b47b0a;
 }
 
 .back-to-top.active {
@@ -136,6 +138,11 @@ h6 {
 
 #header .logo a span {
   color: #ffc451;
+}
+#header .logo a span:hover
+{
+  font-weight: 500;
+  color: rgb(243, 164, 17);
 }
 
 #header .logo img {

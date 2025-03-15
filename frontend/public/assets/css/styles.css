@@ -15,11 +15,13 @@ body {
   a {
     color: #ffc451;
     text-decoration: none;
+    opacity: 0.95;
   }
   
   a:hover {
     color: #ffd584;
     text-decoration: none;
+    opacity: 1;
   }
   
   h1,
