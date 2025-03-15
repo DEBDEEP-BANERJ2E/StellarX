@@ -274,7 +274,7 @@ input {
 	font-size: 25px;
 }
 
-.social-container a {
+social-container a {
 	border: 1px solid #007bff;
 	border-radius: 50%;
 	display: inline-flex;
@@ -292,7 +292,6 @@ input {
 	color: white;
 }
 
-
 @media all and (max-width:400px ) {
   body {
     width: 40%;
@@ -309,4 +308,94 @@ input {
     display: flex;
     align-items: center;
     gap: 5px; /* Adjust spacing between checkbox and text */
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    min-height: 600px;
+  }
+
+  .overlay-container {
+    display: none;
+  }
+
+  .sign-in-container,
+  .sign-up-container {
+    width: 100%;
+    position: relative;
+    transform: none;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .container.right-panel-active .sign-in-container,
+  .container.right-panel-active .sign-up-container {
+    transform: none;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    margin: 10% 0;
+  }
+
+  .container{
+	margin: 10px 0;
+  }
+
+  form {
+    padding: 10px 20px;
+  }
+
+  button {
+    padding: 10px 30px;
+  }
+
+  .social-container a {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    width: 100%;
+    height: auto;
+  }
+
+  .container {
+    width: 95%;
+    min-height: 650px;
+  }
+
+  .overlay-container {
+    display: none;
+  }
+
+  .sign-in-container,
+  .sign-up-container {
+    width: 100%;
+    position: relative;
+    transform: none;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .container.right-panel-active .sign-in-container,
+  .container.right-panel-active .sign-up-container {
+    transform: none;
+  }
 }
