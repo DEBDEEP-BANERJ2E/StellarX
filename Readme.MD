@@ -18,6 +18,7 @@ Powerful Geo Positing System using STELLARX
 - **Backend:** Node.js, Express, Django, etc.
 - **Database:** MySQL, Mongooise, etc.
 - **Authentication:** Firebase.
+- **CSS libraries/Animations:** aos,bootstrap, bootstrap-icons, glightbox,isotope-layout, swiper.
 
 ## 💡 How to Get Started with Open Source Contribution
 
