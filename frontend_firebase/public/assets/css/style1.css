@@ -41,6 +41,10 @@ body {
     z-index: 997;
     padding: 19px 0;
     font-family: "Open Sans", sans-serif;
+    position: fixed; /* Ensure header is fixed */
+    width: 100%; /* Ensure header takes full width */
+    top: 0; /* Position header at the top */
+    left: 0;
   }
   
   #header.header-scrolled,
@@ -118,6 +122,9 @@ button:focus {
 button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
+	position: absolute; /* Ensure buttons are positioned correctly */
+	bottom: 20px; /* Position buttons at the bottom */
+	width: 150px; /* Set a fixed width for buttons */
 }
 
 button.ghost:hover {
@@ -323,9 +330,14 @@ social-container a {
 }
 
 @media (max-width: 768px) {
+  #header {
+    position: relative; /* Change position to relative for smaller screens */
+  }
+
   .container {
     width: 95%;
     min-height: 600px;
+    margin-top: 2px; /* Add margin to create gap between header and container */
   }
 
   .overlay-container {
@@ -345,11 +357,17 @@ social-container a {
   .container.right-panel-active .sign-up-container {
     transform: none;
   }
+
+  button.ghost {
+    position: relative; /* Adjust position for smaller screens */
+    bottom: auto;
+    width: auto;
+  }
 }
 
 @media (max-width: 576px) {
   body {
-    margin: 10% 0;
+    margin: 6% 0;
   }
 
   .container{
@@ -379,6 +397,7 @@ social-container a {
   .container {
     width: 95%;
     min-height: 650px;
+    margin-top: 15px; /* Add margin to create gap between header and container */
   }
 
   .overlay-container {
