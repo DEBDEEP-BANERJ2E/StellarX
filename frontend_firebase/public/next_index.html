@@ -258,6 +258,64 @@
             color: #ffc451;
             text-decoration: none;
         }
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-panel {
+                width: 100%;
+                min-width: auto;
+                max-width: none;
+            }
+            .right-panel {
+                width: 100%;
+                min-width: auto;
+                max-width: none;
+            }
+}
+
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        padding: 8px 20px;
+        display: block;
+    }
+}
+
+@media (max-width: 900px) {
+    .tabs {
+        flex-direction: column;
+    }
+    .tab {
+        width: 100%;
+    }
+    .input-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #userInput,
+    #sendButton,
+    #audioButton,
+    #attachmentButton {
+        width: 100%;
+        margin-top: 5px;
+    }
+    .coordinates-container {
+        flex-direction: column;
+    }
+    #latitude,
+    #longitude {
+        width: 100%;
+    }
+}
+
     </style>
 </head>
 <body>
