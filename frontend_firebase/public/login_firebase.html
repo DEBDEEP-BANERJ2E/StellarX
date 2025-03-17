@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StellarX</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
 
     <!-- Favicons -->
+
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -72,13 +72,53 @@
   </head>
 
   
+
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <link href="assets/css/style1.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
+
+
   <body>
-    
     <header id="header" class="fixed-top">
-            <h1 class="logo me-auto me-lg-0"><a href="home.html"><span>StellarX</span></a></h1>
-    </header><!-- End Header -->
+      <h1 class="logo me-auto me-lg-0">
+        <a href="home.html"><span>StellarX</span></a>
+      </h1>
+    </header>
+    <!-- End Header -->
 
     <div class="container" id="container">
+
       
       <!-- Sign Up Container -->
       <div class="form-container sign-up-container">
@@ -147,19 +187,115 @@
         </form>
       </div>
       
+=======
+      <div class="form-container sign-up-container">
+        <form action="#">
+          <h1 id="title">Create Account</h1>
+          <div class="social-container">
+            <a href="#" class="social" title="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social" title="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="social" title="Google"
+              ><i class="fab fa-google"></i
+            ></a>
+          </div>
+          <span>Or use your email for registration</span>
+          <label for="name" id="name-label">
+            <input
+              type="text"
+              id="name"
+              placeholder="Name"
+              name="name"
+              required
+          /></label>
+          <label for="email" id="email-label">
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              name="email"
+              required
+          /></label>
+          <label for="password" id="password-label">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              name="password"
+              required
+          /></label>
+          <br />
+          <label for="t_and_c" id="t_and_c-label">
+            <input name="t_and_c" type="checkbox" id="t_and_c" required />
+            <span class="no-wrap"
+              >&nbsp;I agree with all statements in
+              <a href="#!" class="text-body"><u>Terms of service</u></a></span
+            >
+          </label>
+          <br />
+          <button type="button" onclick="validateSignUp()">Sign Up</button>
+        </form>
+      </div>
+
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1 id="title">Sign in</h1>
+          <div class="social-container">
+            <a href="#" class="social" title="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social" title="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="social" title="Google"
+              ><i class="fab fa-google"></i
+            ></a>
+          </div>
+          <span>Or use your account</span>
+          <label for="email1" id="email1-label">
+            <input
+              type="email"
+              id="email1"
+              placeholder="Email"
+              name="email1"
+              required
+          /></label>
+          <label for="password1" id="password1-label">
+            <input
+              type="password"
+              id="password1"
+              placeholder="Password"
+              name="password1"
+              required
+          /></label>
+          <a href="#">Forgot your password?</a>
+
+          <button type="button" onclick="validateSignIn()">Sign In</button>
+          <a href="next_index.html" class="btn btn-primary"
+            >To go to dashboard without logging in</a
+          >
+        </form>
+      </div>
+
+
       <div class="overlay-container">
         <div class="overlay">
           <div class="overlay-panel overlay-left">
             <h1 id="title">Welcome!</h1>
-				<p>Already One Of Us?<br>Then Click Below<br></p>
-				<button class="ghost" id="signIn">Sign In</button>
+            <p>Already One Of Us?<br />Then Click Below<br /></p>
+            <button class="ghost" id="signIn">Sign In</button>
           </div>
-          
+
           <div class="overlay-panel overlay-right">
             <h1 id="title">Hello!</h1>
-				<p>New Member?<br>Then Register By<br> Clicking Below<br></p>
-				<button class="ghost" id="signUp">Create Account3
-                </button>
+            <p>
+              New Member?<br />Then Register By<br />
+              Clicking Below<br />
+            </p>
+            <button class="ghost" id="signUp">Create Account3</button>
           </div>
         </div>
       </div>
@@ -168,6 +304,7 @@
     <!-- Adding Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
+
 
         <!-- Firebase SDK -->
         <script type="module">
@@ -218,5 +355,83 @@
       }
     </script>
     
+=======
+    <!-- Firebase SDK -->
+    <script type="module">
+      const signUpButton = document.getElementById("signUp");
+      const signInButton = document.getElementById("signIn");
+      const container = document.getElementById("container");
+
+      signUpButton.addEventListener("click", () => {
+        container.classList.add("right-panel-active");
+      });
+
+      signInButton.addEventListener("click", () => {
+        container.classList.remove("right-panel-active");
+      });
+      // Import Firebase modules
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: `${process.env.REACT_APP_API_KEY}`,
+        authDomain: `${process.env.REACT_APP_AUTH_DOMAIN}`,
+        projectId: `${process.env.REACT_APP_PROJECT_ID}`,
+        storageBucket: `${process.env.REACT_APP_STORAGE_BUCKET}`,
+        messagingSenderId: `${process.env.REACT_APP_MESSAGING_SENDER_ID}`,
+        appId: `${process.env.REACT_APP_API_ID}`,
+        measurementId: `${process.env.REACT_APP_MEASUREMENT_ID}`,
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Signup Function
+      window.validateSignUp = async function () {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var checkbox = document.getElementById("t_and_c").checked;
+
+        if (!email || !password || !checkbox) {
+          alert("Please fill in all fields and agree to the Terms of Service.");
+          return;
+        }
+
+        try {
+          await createUserWithEmailAndPassword(auth, email, password);
+          alert("Registration successful! Please log in.");
+          document
+            .getElementById("container")
+            .classList.remove("right-panel-active");
+        } catch (error) {
+          alert("Error: " + error.message);
+        }
+      };
+
+      // Signin Function
+      window.validateSignIn = async function () {
+        var email = document.getElementById("email1").value;
+        var password = document.getElementById("password1").value;
+
+        if (!email || !password) {
+          alert("Please enter both email and password.");
+          return;
+        }
+
+        try {
+          await signInWithEmailAndPassword(auth, email, password);
+          window.location.href = "next_index.html"; // Redirect after successful login
+        } catch (error) {
+          alert("Error: " + error.message);
+        }
+      };
+    </script>
+
   </body>
 </html>
