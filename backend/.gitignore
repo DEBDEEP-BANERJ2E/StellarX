@@ -1,0 +1,43 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+
+# Database files
+*.sqlite
+*.sqlite3
+
+# Build files
+dist/
+out/
+
+# Temporary files
+*.tmp
+*.swp
+
+# VSCode settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Miscellaneous
+coverage/
+
+# Ignore uploaded files (optional)
+uploads/
+public/uploads/
+
+# Ignore MySQL dump files
+*.sql
+
+# Ignore MongoDB dump files
+dump/
