@@ -92,7 +92,8 @@ p {
 }
 
 span {
-    font-size: 12px;
+	font-size: 12px;
+    margin: 5px 0;  /* Reduced margin */
 }
 
 a {
@@ -103,15 +104,16 @@ a {
 }
 
 button {
-    border-radius: 50px;
-    border: 1px solid #4dbad0;
-    background-color: #4dbad0;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    text-transform: uppercase;
-    transition: transform 0.3s ease-in-out , background-color 0.3s ease-in-out;
+	border-radius: 50px;
+	border: 1px solid #4dbad0;
+	background-color: #4dbad0;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	text-transform: uppercase;
+	transition: transform 0.3s ease-in-out , background-color 0.3s ease-in-out;
+    margin: 8px 0;  /* Consistent spacing */
 }
 
 button:hover {
@@ -140,13 +142,13 @@ form {
     background-color: #FFFFFF;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    padding: 10px 50px;
-    height: 100%;
+    padding: 20px 50px;
+    height: auto; /* Change from 100% to auto */
+    min-height: 100%; /* Add min-height */
     text-align: center;
-    width: 100%; /* Ensure form takes full width */
-    max-width: 500px; /* Set a max-width for form */
+    gap: 10px;
 }
 
 input {
@@ -158,37 +160,56 @@ input {
     width: 100%;
 }
 
+/* Increase input field width */
+input[type="email"],
+input[type="text"],
+input[type="password"],
+.password-container {
+    width: 100%;
+    max-width: 400px;  /* Increased width */
+}
+
 .container {
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.7);
-    position: relative;
-    overflow: hidden;
-    width: 80%;
-    max-width: 100%;
-    min-height: 550px;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.7);
+	position: relative;
+	overflow: hidden;
+	width: 80%;
+	max-width: 100%;
+	min-height: 550px;
     display: flex; /* Add flex display */
     flex-direction: column; /* Ensure column layout */
     align-items: center; /* Center items horizontally */
     justify-content: center; /* Center items vertically */
+    min-height: 650px;
 }
 
 .form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
-    display: flex; /* Add flex display */
-    flex-direction: column; /* Ensure column layout */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    width: 100%; /* Ensure form-container takes full width */
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
 }
 
+
 .sign-in-container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
+	left: 0;
+	width: 50%;
+	z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;  /* Consistent but smaller gap */
+    padding: 20px 50px;
 }
 
 .container.right-panel-active .sign-in-container {
@@ -200,6 +221,21 @@ input {
     width: 50%;
     opacity: 0;
     z-index: 1;
+    height: 100%;
+    overflow-y: auto; /* Add scroll to the form itself */
+}
+
+/* Fix spacing in sign-up container */
+.sign-up-container form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px 50px;
+    height: auto;
+    min-height: 100%;
+    text-align: center;
+    gap: 8px;  /* Reduced gap between elements */
 }
 
 .container.right-panel-active .sign-up-container {
@@ -288,11 +324,13 @@ input {
     transform: translateX(20%);
 }
 
+/* Adjust social container spacing */
 .social-container {
     margin: 20px 0;
     display: flex; /* Add flex display */
     justify-content: center; /* Center items horizontally */
     gap: 10px; /* Add gap between elements */
+	margin: 10px 0;  /* Reduced margin */
 }
 
 .social-container i {
@@ -333,6 +371,73 @@ social-container a {
     display: flex;
     align-items: center;
     gap: 5px; /* Adjust spacing between checkbox and text */
+}
+
+
+.password-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px;  /* Space for eye icon */
+    padding-left: 40px;   /* Space for key icon */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.generate-password {
+    position: absolute;
+    left: 15px;
+    cursor: pointer;
+    z-index: 1;
+    transform: translateY(-50%);
+    top: 50%;
+    transition: color 0.3s ease;
+}
+
+.generate-password:hover {
+    color: #4dbad0;  /* Matches your button color theme */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    z-index: 1;
+    transform: translateY(-50%);
+    top: 50%;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #4dbad0;  /* Matches your button color theme */
+}
+
+input[type="email"],
+.password-container {
+    width: 100%;
+    max-width: 300px;  /* Set a consistent max-width for both email and password fields */
+}
+
+#password-requirements {
+    width: 100%;
+    max-width: 400px;  /* Match input width */
+    margin: 5px 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    font-size: 12px;
+}
+
+#password-requirements li {
+    margin: 2px 0;
+    color: #666;
 }
 
 @media (max-width: 1200px) {
@@ -451,4 +556,188 @@ social-container a {
     .social-container {
         gap: 20px; /* Increase gap for larger screens */
     }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    #header {
+        position: relative; /* Change position to relative for smaller screens */
+    }
+
+    .container {
+        width: 95%;
+        min-height: 600px;
+        margin-top: 2px; /* Add margin to create gap between header and container */
+    }
+
+    .overlay-container {
+        display: none;
+    }
+
+    .sign-in-container,
+    .sign-up-container {
+        width: 100%;
+        position: relative;
+        transform: none;
+        opacity: 1;
+        z-index: 1;
+        display: flex; /* Add flex display */
+        flex-direction: column; /* Ensure column layout */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+    }
+
+    .container.right-panel-active .sign-in-container,
+    .container.right-panel-active .sign-up-container {
+        transform: none;
+    }
+
+    button.ghost {
+        position: relative; /* Adjust position for smaller screens */
+        bottom: auto;
+        width: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        margin: 6% 0;
+    }
+
+    .container{
+        margin: 10px 0;
+    }
+
+    form {
+        padding: 10px 20px;
+        width: 100%; /* Ensure form takes full width */
+        max-width: 400px; /* Set a max-width for form */
+    }
+
+    button {
+        padding: 10px 30px;
+    }
+
+    .social-container a {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        width: 100%;
+        height: auto;
+    }
+
+    .container {
+        width: 95%;
+        min-height: 650px;
+        margin-top: 15px; /* Add margin to create gap between header and container */
+    }
+
+    .overlay-container {
+        display: none;
+    }
+
+    .sign-in-container,
+    .sign-up-container {
+        width: 100%;
+        position: relative;
+        transform: none;
+        opacity: 1;
+        z-index: 1;
+        display: flex; /* Add flex display */
+        flex-direction: column; /* Ensure column layout */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+    }
+
+    .container.right-panel-active .sign-in-container,
+    .container.right-panel-active .sign-up-container {
+        transform: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .social-container {
+        gap: 20px; /* Increase gap for larger screens */
+    }
+
+.password-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px;  /* Space for eye icon */
+    padding-left: 40px;   /* Space for key icon */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.generate-password {
+    position: absolute;
+    left: 15px;
+    cursor: pointer;
+    z-index: 1;
+    transform: translateY(-50%);
+    top: 50%;
+    transition: color 0.3s ease;
+}
+
+.generate-password:hover {
+    color: #4dbad0;  /* Matches your button color theme */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    z-index: 1;
+    transform: translateY(-50%);
+    top: 50%;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #4dbad0;  /* Matches your button color theme */
+}
+
+input[type="email"],
+.password-container {
+    width: 100%;
+    max-width: 300px;  /* Set a consistent max-width for both email and password fields */
+}
+
+#password-requirements {
+    width: 100%;
+    max-width: 400px;  /* Match input width */
+    margin: 5px 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    font-size: 12px;
+}
+
+#password-requirements li {
+    margin: 2px 0;
+    color: #666;
+}
 }

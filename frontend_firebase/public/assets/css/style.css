@@ -1,4 +1,3 @@
-
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -62,6 +61,7 @@ h6 {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+
 #preloader {
   position: fixed;
   top: 0;
@@ -213,7 +213,7 @@ h6 {
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover>a {
+.navbar li:hover > a {
   color: #ffc451;
 }
 
@@ -250,11 +250,11 @@ h6 {
 
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
+.navbar .dropdown ul li:hover > a {
   background-color: #ffc451;
 }
 
-.navbar .dropdown:hover>ul {
+.navbar .dropdown:hover > ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -266,7 +266,7 @@ h6 {
   visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover>ul {
+.navbar .dropdown .dropdown:hover > ul {
   opacity: 1;
   top: 0;
   left: 100%;
@@ -278,7 +278,7 @@ h6 {
     left: -90%;
   }
 
-  .navbar .dropdown .dropdown:hover>ul {
+  .navbar .dropdown .dropdown:hover > ul {
     left: -100%;
   }
 }
@@ -345,7 +345,7 @@ h6 {
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover>a {
+.navbar-mobile li:hover > a {
   color: #151515;
   background-color: #ffc451;
 }
@@ -382,11 +382,11 @@ h6 {
 
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
+.navbar-mobile .dropdown ul li:hover > a {
   background-color: #ffc451;
 }
 
-.navbar-mobile .dropdown>.dropdown-active {
+.navbar-mobile .dropdown > .dropdown-active {
   display: block;
 }
 
@@ -696,7 +696,8 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/cta-bg.jpg") fixed center center;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/cta-bg.jpg") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
@@ -736,16 +737,15 @@ section {
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
   font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
 }
-
 
 .login-container {
   width: 300px;
@@ -756,8 +756,6 @@ section {
   font-size: 14px;
   text-transform: uppercase;
   transition: all ease-in-out 0.3s;
-
-
 }
 
 input {
@@ -768,8 +766,6 @@ input {
   font-size: 14px;
   text-transform: uppercase;
   transition: all ease-in-out 0.3s;
-
-
 }
 
 button {
@@ -783,7 +779,6 @@ button {
   font-size: 14px;
   text-transform: uppercase;
   transition: all ease-in-out 0.3s;
-
 }
 .portfolio #portfolio-flters {
   padding: 0;
@@ -917,7 +912,10 @@ button {
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -925,7 +923,10 @@ button {
   border: 1px solid #ffc451;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: #ffc451;
 }
 
@@ -948,7 +949,7 @@ button {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -1303,7 +1304,7 @@ button {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 
@@ -1356,7 +1357,7 @@ button {
   padding: 10px 12px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   background: #ffc451;
   border: 0;
   padding: 10px 24px;
@@ -1365,7 +1366,7 @@ button {
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: #ffcd6b;
 }
 
@@ -1402,11 +1403,11 @@ button {
   margin: 0;
 }
 
-.breadcrumbs ol li+li {
+.breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li+li::before {
+.breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
   color: #2f2f2f;
@@ -1547,13 +1548,13 @@ button {
   border-radius: 4px;
 }
 
-#footer .footer-top .footer-newsletter form input[type=email] {
+#footer .footer-top .footer-newsletter form input[type="email"] {
   border: 0;
   padding: 4px;
   width: calc(100% - 110px);
 }
 
-#footer .footer-top .footer-newsletter form input[type=submit] {
+#footer .footer-top .footer-newsletter form input[type="submit"] {
   position: absolute;
   top: 0;
   right: -2px;
@@ -1568,7 +1569,7 @@ button {
   border-radius: 0 4px 4px 0;
 }
 
-#footer .footer-top .footer-newsletter form input[type=submit]:hover {
+#footer .footer-top .footer-newsletter form input[type="submit"]:hover {
   background: #ffcd6b;
 }
 
@@ -1584,7 +1585,7 @@ button {
   color: #fff;
 }
 
-.blurred-box{
+.blurred-box {
   position: relative;
   width: 250px;
   height: 350px;
@@ -1595,23 +1596,20 @@ button {
   overflow: hidden;
 }
 
-.blurred-box:after{
-
- width: 300px;
- height: 300px;
- background: inherit; 
- position: absolute;
- left: -25px;
- left: position;
- right: 0;
- top: -25px;  
- top: position;
- bottom: 0;
- box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
- filter: blur(10px);
+.blurred-box:after {
+  width: 300px;
+  height: 300px;
+  background: inherit;
+  position: absolute;
+  left: -25px;
+  left: position;
+  right: 0;
+  top: -25px;
+  top: position;
+  bottom: 0;
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.05);
+  filter: blur(10px);
 }
-
-
 
 #login {
   width: 100%;
@@ -1686,7 +1684,7 @@ button {
   white-space: nowrap;
   border-radius: 0.2em;
   font-size: 16px;
-  color: #FFF;
+  color: #fff;
 }
 .loginBtn:before {
   content: "";
@@ -1701,40 +1699,40 @@ button {
   outline: none;
 }
 .loginBtn:active {
-  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);
 }
-
 
 /* Facebook */
 .loginBtn--facebook {
-  background-color: #4C69BA;
-  background-image: linear-gradient(#4C69BA, #3B55A0);
+  background-color: #4c69ba;
+  background-image: linear-gradient(#4c69ba, #3b55a0);
   /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
-  text-shadow: 0 -1px 0 #354C8C;
+  text-shadow: 0 -1px 0 #354c8c;
 }
 .loginBtn--facebook:before {
   border-right: #364e92 1px solid;
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png")
+    6px 6px no-repeat;
 }
 .loginBtn--facebook:hover,
 .loginBtn--facebook:focus {
-  background-color: #5B7BD5;
-  background-image: linear-gradient(#5B7BD5, #4864B1);
+  background-color: #5b7bd5;
+  background-image: linear-gradient(#5b7bd5, #4864b1);
 }
-
 
 /* Google */
 .loginBtn--google {
   /*font-family: "Roboto", Roboto, arial, sans-serif;*/
-  background: #DD4B39;
+  background: #dd4b39;
 }
 .loginBtn--google:before {
-  border-right: #BB3F30 1px solid;
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
+  border-right: #bb3f30 1px solid;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png")
+    6px 6px no-repeat;
 }
 .loginBtn--google:hover,
 .loginBtn--google:focus {
-  background: #E74B37;
+  background: #e74b37;
 }
 
 /* Add your custom styles here */
@@ -1750,29 +1748,26 @@ button {
 }
 
 .icon-box {
- 
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .icon-box:hover {
   transform: translateY(-10px) scale(1.05);
-  
 }
 
 .icon-box i {
-
   transition: color 0.3s ease-in-out;
 }
-.img-fluid{
+.img-fluid {
   transition: transform 0.3s ease-in-out;
 }
-.img-fluid:hover{
+.img-fluid:hover {
   transform: scale(1.05);
 }
-.achvs{
+.achvs {
   transition: transform 0.3s ease-in-out;
 }
-.achvs:hover{
+.achvs:hover {
   transform: scale(1.05);
 }
 
