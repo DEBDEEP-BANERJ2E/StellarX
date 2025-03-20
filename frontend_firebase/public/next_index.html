@@ -40,8 +40,24 @@
             font-family: "Open Sans", sans-serif;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 5px 10px;
         }
+
+#shownav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#opennav,
+#closenav {
+  cursor: pointer;
+  display: none;
+  height: 0;
+  width: 0; 
+}
+
 
         nav a {
             font-family: "Open Sans", sans-serif;
@@ -290,6 +306,54 @@
 }
 
 @media (max-width: 900px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #opennav {
+        display: block;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    #closenav {
+        display: none;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: black;
+        padding: 10px 0;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 20px;
+        color: #ffc451;
+        text-decoration: none;
+    }
+
+    .show {
+        top:70px;
+        display: flex !important;
+        flex-direction: column;
+        height:155px;
+    }
     .tabs {
         flex-direction: column;
     }
@@ -321,10 +385,12 @@
 <body>
 
     <header>
-
+       
+        <img id="opennav" src="assets/img/open_nav.png" alt="close image">
         <h1><a href="home.html" class="stellarx-link">STELLARX</a></h1>
-
+        <img id="closenav" src="assets/img/close_nav.png" alt="open image">
         <nav>
+        <div class='show' id="shownav">
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
@@ -333,6 +399,8 @@
             <p class="profile-text">User Name: John Doe</p>
             <p class="profile-text">Email: john97@gmail.com</p>
         </div>
+    </div>
+</nav>
     </header>
 
     <div class="container">
@@ -391,6 +459,23 @@
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
+const navMenu = document.querySelector('nav');
+const toggleMenu = document.getElementById('opennav');
+const closeMenu = document.getElementById('closenav');
+
+toggleMenu.addEventListener('click', () => {
+    navMenu.classList.add('show');
+    toggleMenu.style.display = 'none';  // Hide open icon
+    closeMenu.style.display = 'block';  // Show close icon
+});
+
+closeMenu.addEventListener('click', () => {
+    navMenu.classList.remove('show');
+    closeMenu.style.display = 'none';  // Hide close icon
+    toggleMenu.style.display = 'block';  // Show open icon
+});
+
+
         let map;
 
         function initMap() {
