@@ -17,6 +17,14 @@ body {
     margin: 30px 0 50px;
 }
 
+.hide{
+    display: none !important;
+}
+
+.toggle{
+    display: none;
+}
+
 @keyframes animate-preloader {
     0% {
       transform: rotate(0deg);
@@ -167,6 +175,10 @@ input[type="password"],
 .password-container {
     width: 100%;
     max-width: 400px;  /* Increased width */
+}
+
+input::placeholder{
+    font-size: 2vw;
 }
 
 .container {
@@ -463,8 +475,20 @@ input[type="email"],
         margin-top: 2px; /* Add margin to create gap between header and container */
     }
 
+    #title{
+        font-size: 6vw;
+    }
+
     .overlay-container {
         display: none;
+    }
+
+    .dash{
+        font-size: 85%;
+    }
+
+    .toggle{
+        display: block;
     }
 
     .sign-in-container,
@@ -483,6 +507,10 @@ input[type="email"],
     .container.right-panel-active .sign-in-container,
     .container.right-panel-active .sign-up-container {
         transform: none;
+    }
+
+    .social-container i{
+        font-size: 4vw;
     }
 
     button.ghost {
@@ -507,6 +535,14 @@ input[type="email"],
         max-width: 400px; /* Set a max-width for form */
     }
 
+    input::placeholder{
+        font-size: 3vw;
+    }
+
+    .social-container i{
+        font-size: 5vw;
+    }
+
     button {
         padding: 10px 30px;
     }
@@ -523,10 +559,27 @@ input[type="email"],
         height: auto;
     }
 
+    .fixed-top{
+        padding-bottom: 0 !important;
+    }
+
+    .head{
+        font-size: 1.8rem !important;
+        padding: 0 10% !important;
+    }
+
     .container {
         width: 95%;
         min-height: 650px;
         margin-top: 15px; /* Add margin to create gap between header and container */
+    }
+
+    input::placeholder{
+        font-size: 0.8rem;
+    }
+
+    .social-container i{
+        font-size: 1.5rem;
     }
 
     .overlay-container {
@@ -544,6 +597,15 @@ input[type="email"],
         flex-direction: column; /* Ensure column layout */
         align-items: center; /* Center items horizontally */
         justify-content: center; /* Center items vertically */
+    }
+
+    #title{
+        font-size: 8vw;
+    }
+
+    .sign-in-container form,
+    .sign-up-container form{
+        padding: 10% 0;
     }
 
     .container.right-panel-active .sign-in-container,

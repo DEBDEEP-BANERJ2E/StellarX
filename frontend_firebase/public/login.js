@@ -296,6 +296,32 @@ document.querySelector('.generate-password').addEventListener('mouseleave', func
     }
 });
 
+// Sign in and Sign up toggle Logic
+document.querySelectorAll('.toggle-link').forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+  
+      let signInElement = document.getElementById("sign-in-container");
+      let signUpElement = document.getElementById("sign-up-container");
+  
+      signInElement.classList.toggle('hide');
+      signUpElement.classList.toggle('hide');
+    });
+  });
 
+  function checkScreenWidth() {
+    let signInElement = document.getElementById("sign-in-container");
+    let signUpElement = document.getElementById("sign-up-container");
 
+    if (window.innerWidth < 768) {
+        signUpElement.classList.add('hide');
+        signInElement.classList.remove('hide');
+    } else {
+        signUpElement.classList.remove('hide');
+        signInElement.classList.remove('hide');
+    }
+}
 
+checkScreenWidth();
+
+window.addEventListener('resize', checkScreenWidth);
