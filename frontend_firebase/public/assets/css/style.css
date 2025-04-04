@@ -718,18 +718,42 @@ section {
   font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 8px 28px;
-  border-radius: 4px;
-  transition: 0.5s;
   margin-top: 10px;
   border: 2px solid #fff;
   color: #fff;
+  background-color: #ffc451;
+  color: #151515;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .cta .cta-btn:hover {
   background: #ffc451;
   border-color: #ffc451;
   color: #151515;
+}
+
+.icon {
+  transition: transform 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .powerful-stellar h1 {
+    font-size: 2em;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1775,4 +1799,29 @@ button {
   width: 90%; /* Adjust width as needed */
   height: 400px; /* Increase or decrease height */
   border: 0;
+}
+
+#powerful-stellar {
+  background-attachment: fixed;
+  position: relative;
+  padding: 100px 0; 
+}
+
+#powerful-stellar h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3em;
+  color: #ffc451; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: 2; 
+  position: relative; 
+}
+
+#powerful-stellar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  position: relative; /* Ensure content is above the overlay */
+  z-index: 2;
 }
