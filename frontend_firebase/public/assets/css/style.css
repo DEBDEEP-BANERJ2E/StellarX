@@ -655,7 +655,7 @@ section {
   margin: 0 auto;
   width: 64px;
   height: 64px;
-  background: #ffc451;
+  background: #ecae32;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -682,7 +682,7 @@ section {
 }
 
 .services .icon-box h4 a:hover {
-  color: #ffc451;
+  color: #e87c09;
 }
 
 .services .icon-box p {
