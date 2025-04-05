@@ -649,6 +649,7 @@ section {
   padding: 80px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
+  box-shadow: 3px solid #0c0b0b;
 }
 
 .services .icon-box .icon {
@@ -689,6 +690,8 @@ section {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
+  font-weight: 500;
+  color: #000;
 }
 
 .services .icon-box:hover {
