@@ -1052,6 +1052,55 @@ button {
   }
 }
 
+.achievement {
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Transition effect */
+}
+
+.achievement.visible {
+  opacity: 1; 
+}
+
+.achievement {
+  transform: scale(0.9);
+  transition: transform 0.3s ease; 
+}
+
+.achievement:hover {
+  transform: scale(1); 
+}
+
+.achievement {
+  transform: translateX(-100%); 
+  opacity: 0; 
+  transition: transform 0.5s ease, opacity 0.5s ease; 
+}
+
+.achievement.visible {
+  transform: translateX(0); 
+  opacity: 1; 
+}
+
+.achievement {
+  box-shadow: none; 
+  transition: box-shadow 0.3s ease; 
+}
+
+.achievement:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.achievement {
+  opacity: 0;
+  transform: translateY(20px); 
+  transition: transform 0.5s ease, opacity 0.5s ease; 
+}
+
+.achievement.visible {
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
