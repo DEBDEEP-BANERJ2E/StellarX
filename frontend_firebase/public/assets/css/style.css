@@ -1010,11 +1010,14 @@ button {
 .counts .content h3 {
   font-weight: 700;
   font-size: 34px;
-  color: #151515;
+  color: #040404;
 }
 
 .counts .content p {
   margin-bottom: 0;
+  color: #292929;
+  font-weight: 500;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .counts .content .count-box {
@@ -1025,7 +1028,7 @@ button {
 .counts .content .count-box i {
   display: block;
   font-size: 36px;
-  color: #ffc451;
+  color: #2222e2;
   float: left;
 }
 
@@ -1034,7 +1037,7 @@ button {
   line-height: 30px;
   display: block;
   font-weight: 700;
-  color: #151515;
+  color: #221f1f;
   margin-left: 50px;
 }
 
@@ -1050,7 +1053,7 @@ button {
   font-weight: 600;
   display: block;
   margin-top: 20px;
-  color: #3b3b3b;
+  color: #1f1d1d;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   transition: ease-in-out 0.3s;
@@ -1080,6 +1083,55 @@ button {
   .counts .image img {
     max-width: 100%;
   }
+}
+
+.achievement {
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Transition effect */
+}
+
+.achievement.visible {
+  opacity: 1; 
+}
+
+.achievement {
+  transform: scale(0.9);
+  transition: transform 0.3s ease; 
+}
+
+.achievement:hover {
+  transform: scale(1); 
+}
+
+.achievement {
+  transform: translateX(-100%); 
+  opacity: 0; 
+  transition: transform 0.5s ease, opacity 0.5s ease; 
+}
+
+.achievement.visible {
+  transform: translateX(0); 
+  opacity: 1; 
+}
+
+.achievement {
+  box-shadow: none; 
+  transition: box-shadow 0.3s ease; 
+}
+
+.achievement:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.achievement {
+  opacity: 0;
+  transform: translateY(20px); 
+  transition: transform 0.5s ease, opacity 0.5s ease; 
+}
+
+.achievement.visible {
+  opacity: 1; 
+  transform: translateY(0); 
 }
 
 /*--------------------------------------------------------------
