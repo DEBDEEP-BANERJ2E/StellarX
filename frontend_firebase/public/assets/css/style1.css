@@ -121,7 +121,7 @@ button {
 	padding: 12px 45px;
 	text-transform: uppercase;
 	transition: transform 0.3s ease-in-out , background-color 0.3s ease-in-out;
-    margin: 8px 0;  /* Consistent spacing */
+    margin: 8px 0;  
 }
 
 button:hover {
@@ -164,8 +164,17 @@ input {
     border: none;
     border-radius: 50px;
     padding: 10px 15px;
-    margin: 8px 0;
+    margin: 9px 0;
     width: 100%;
+        background-color: #f9f9f9; 
+        border: 1px solid #ddd; 
+        transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+input:focus {
+    border-color: #4dbad0; 
+    box-shadow: 0 0 5px rgba(77, 186, 208, 0.5); 
+    outline: none; 
 }
 
 /* Increase input field width */
@@ -234,7 +243,16 @@ input::placeholder{
     opacity: 0;
     z-index: 1;
     height: 100%;
-    overflow-y: auto; /* Add scroll to the form itself */
+    overflow-y: auto; 
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.sign-up-container:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); 
 }
 
 /* Fix spacing in sign-up container */
@@ -286,7 +304,7 @@ input::placeholder{
 
 .overlay {
     background: #f6f5f7;
-    background: -webkit-linear-gradient(to right, #4dbad0, #4800ff);
+    background: -webkit-linear-gradient(to right, #0b9af9, #4800ff);
     background: linear-gradient(to right, #020006, #4dbad0);
     background-repeat: no-repeat;
     background-size: cover;
@@ -349,7 +367,7 @@ input::placeholder{
     font-size: 25px;
 }
 
-social-container a {
+.social-container a {
     border: 1px solid #007bff;
     border-radius: 50%;
     display: inline-flex;
@@ -746,6 +764,12 @@ input[type="email"],
     margin: 8px 0;
 }
 
+.text-center:hover
+{
+    color: orange;
+    font-weight: 600;
+    color: #ddd;
+}
 .password-container input {
     width: 100%;
     padding-right: 40px;  /* Space for eye icon */
