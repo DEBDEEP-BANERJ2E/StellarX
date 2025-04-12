@@ -1172,6 +1172,7 @@ button {
   border-radius: 5px;
   background: #fff;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid yellow;
 }
 
 .team .member .member-img {
@@ -1218,6 +1219,10 @@ button {
   padding: 25px 15px;
 }
 
+.team .member .member-info:hover {
+  box-shadow: 0 4px 8px black;
+}
+
 .team .member .member-info h4 {
   font-weight: 700;
   margin-bottom: 5px;
@@ -1225,11 +1230,21 @@ button {
   color: #151515;
 }
 
+.team .member .member-info h4:hover {
+  color:rgb(255, 221, 0);
+  font-weight: bold;
+}
+
 .team .member .member-info span {
   display: block;
   font-size: 13px;
   font-weight: 400;
   color: #aaaaaa;
+}
+
+.team .member .member-info span:hover{
+  color: #cbc45f;
+  font-weight: 700;
 }
 
 .team .member .member-info p {
@@ -1242,6 +1257,10 @@ button {
 .team .member:hover .social {
   opacity: 1;
   bottom: 15px;
+}
+
+.team .member:hover{
+  box-shadow: 0 4px 8px rgb(248, 248, 3);
 }
 
 /*--------------------------------------------------------------
