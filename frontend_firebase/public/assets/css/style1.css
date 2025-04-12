@@ -122,11 +122,14 @@ button {
 	text-transform: uppercase;
 	transition: transform 0.3s ease-in-out , background-color 0.3s ease-in-out;
     margin: 8px 0;  
+    border-radius: 50px;
+    margin: 8px 0;
 }
 
 button:hover {
     transform: scale(1.05);
     background-color: #3f92a2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 button:focus {
@@ -168,13 +171,15 @@ input {
     width: 100%;
         background-color: #f9f9f9; 
         border: 1px solid #ddd; 
-        transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            
 }
 
 input:focus {
     border-color: #4dbad0; 
     box-shadow: 0 0 5px rgba(77, 186, 208, 0.5); 
     outline: none; 
+    transform: scale(1.02); 
 }
 
 /* Increase input field width */
@@ -204,6 +209,19 @@ input::placeholder{
     align-items: center; /* Center items horizontally */
     justify-content: center; /* Center items vertically */
     min-height: 650px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    max-width: 100%;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-container {
@@ -403,6 +421,35 @@ input::placeholder{
     gap: 5px; /* Adjust spacing between checkbox and text */
 }
 
+.error-message
+{
+color: #e74c3c; /* Red color for errors */
+    font-size: 12px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.error-message.visible {
+    opacity: 1; /* Show error message */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        min-height: 600px;
+    }
+
+    input {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    button {
+        padding: 10px 30px; /* Adjust button padding */
+    }
+}
 
 .password-container {
     position: relative;
