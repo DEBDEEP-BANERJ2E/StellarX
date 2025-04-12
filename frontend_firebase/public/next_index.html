@@ -458,6 +458,54 @@
         </div>
     </div>
 
+    <!-- Add a dropdown for language selection -->
+    <div class="language-selector">
+        <label for="language">Language:</label>
+        <select id="language" onchange="changeLanguage(this.value)">
+            <option value="en-US">English</option>
+            <option value="es-ES">Spanish</option>
+            <option value="fr-FR">French</option>
+            <option value="de-DE">German</option>
+            <option value="zh-CN">Chinese</option>
+            <option value="hi-IN">Hindi</option>
+            <option value="ja-JP">Japanese</option>
+            <option value="ar-SA">Arabic</option>
+            <option value="pt-PT">Portuguese</option>
+            <option value="ru-RU">Russian</option>
+            <option value="it-IT">Italian</option>
+            <option value="ko-KR">Korean</option>
+            <option value="tr-TR">Turkish</option>
+            <option value="nl-NL">Dutch</option>
+            <option value="sv-SE">Swedish</option>
+            <option value="no-NO">Norwegian</option>
+            <option value="fi-FI">Finnish</option>
+            <option value="da-DK">Danish</option>
+            <option value="pl-PL">Polish</option>
+            <option value="cs-CZ">Czech</option>
+            <option value="hu-HU">Hungarian</option>
+            <option value="ro-RO">Romanian</option>
+            <option value="sk-SK">Slovak</option>
+            <option value="bg-BG">Bulgarian</option>
+            <option value="el-GR">Greek</option>
+            <option value="th-TH">Thai</option>
+            <option value="vi-VN">Vietnamese</option>
+            <option value="id-ID">Indonesian</option>
+            <option value="ms-MY">Malay</option>
+            <option value="tl-PH">Filipino</option>
+            <option value="sw-KE">Swahili</option>
+            <option value="bn-BD">Bengali</option>
+            <option value="ta-IN">Tamil</option>
+            <option value="ml-IN">Malayalam</option>
+            <option value="te-IN">Telugu</option>
+            <option value="mr-IN">Marathi</option>
+            <option value="gu-IN">Gujarati</option>
+            <option value="kn-IN">Kannada</option>
+            <option value="pa-IN">Punjabi</option>
+            <option value="ur-PK">Urdu</option>
+            <option value="si-LK">Sinhala</option>
+            <option value="am-ET">Amharic</option>
+        </select>
+    </div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
@@ -514,28 +562,70 @@ closeMenu.addEventListener('click', () => {
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
+        let recognition;
+        let isListening = false;
+
         function startSpeechRecognition() {
-            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-            recognition.lang = 'en-US';
-            recognition.onresult = function (event) {
-                const userMessage = event.results[0][0].transcript;
-                appendMessage('user', userMessage);
+            if (!recognition) {
+                recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                recognition.lang = 'en-US'; // Default language
+                recognition.interimResults = true;
+                recognition.continuous = true;
+
+                recognition.onstart = function () {
+                    isListening = true;
+                    document.getElementById('audioButton').textContent = '🎙️ Listening...';
+                };
+
+                recognition.onresult = function (event) {
+                    const userMessage = Array.from(event.results)
+                        .map(result => result[0].transcript)
+                        .join('');
+                    document.getElementById('userInput').value = userMessage;
+
+                    if (event.results[0].isFinal) {
+                        appendMessage('user', userMessage);
+                        fetchChatbotResponse(userMessage);
+                    }
+                };
+
+                recognition.onerror = function (event) {
+                    alert('Speech recognition error: ' + event.error);
+                };
+
+                recognition.onend = function () {
+                    isListening = false;
+                    document.getElementById('audioButton').textContent = '🎤';
+                };
+            }
+
+            if (isListening) {
                 recognition.stop();
+            } else {
+                recognition.start();
+            }
+        }
 
-                setTimeout(() => {
-                    const response = "I'm just a simple example, but you can replace me with ChatGPT!";
-                    appendMessage('assistant', response);
-                    speak(response);
-                }, 500);
-            };
-
-            recognition.start();
+        function fetchChatbotResponse(message) {
+            // Replace this with a call to your chatbot backend (e.g., ChatGPT API)
+            setTimeout(() => {
+                const response = "This is a placeholder response. Replace with dynamic chatbot integration.";
+                appendMessage('assistant', response);
+                speak(response);
+            }, 500);
         }
 
         function speak(message) {
             const speechSynthesis = window.speechSynthesis;
             const speechMessage = new SpeechSynthesisUtterance(message);
+            speechMessage.lang = 'en-US'; // Default language
             speechSynthesis.speak(speechMessage);
+        }
+
+        function changeLanguage(lang) {
+            if (recognition) {
+                recognition.lang = lang;
+            }
         }
 
         function changeTab(tabName) {
