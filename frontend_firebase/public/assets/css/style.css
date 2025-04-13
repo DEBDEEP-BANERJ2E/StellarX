@@ -1368,6 +1368,11 @@ button {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact {
+    background-color: #dceaf7; 
+    padding: 60px 0; 
+}
+
 .contact .info {
   width: 100%;
   background: #fff;
@@ -1375,7 +1380,7 @@ button {
 
 .contact .info i {
   font-size: 20px;
-  background: #ffc451;
+  background: #3889c0;
   color: #151515;
   float: left;
   width: 44px;
@@ -1387,6 +1392,12 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
+.contact .section-title {
+  text-align: left; 
+  margin-bottom: 40px;
+  color: #555;
+}
+
 .contact .info h4 {
   padding: 0 0 0 60px;
   font-size: 22px;
@@ -1395,11 +1406,75 @@ button {
   color: #151515;
 }
 
+.contact h2 {
+  color: #333;
+}
+
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
   color: #484848;
+}
+
+.contact .info {
+  background: #ffffff; 
+  border-radius: 10px; 
+  padding: 30px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px; 
+}
+
+.contact .info div {
+  margin-bottom: 20px; /* Space between info items */
+}
+
+.contact .info h4 {
+  font-weight: 600; 
+  color: #080909; 
+}
+
+.contact .info p {
+  margin: 0; 
+}
+
+.contact .info a {
+  color: #2c5656; 
+  text-decoration: none; 
+}
+
+.contact .info a:hover {
+  text-decoration: underline; /* Underline on hover for links */
+}
+
+.contact form {
+  background: #ffffff; 
+  border-radius: 10px; 
+  padding: 30px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.contact form .form-control {
+  border-radius: 5px; 
+  border: 1px solid #ccc;
+}
+
+.contact form .form-control:focus {
+  border-color: #00796b; 
+  box-shadow: 0 0 5px rgba(0, 121, 107, 0.5); /* Shadow on focus */
+}
+
+.contact button {
+  background: #00796b; 
+  color: #ffffff; 
+  border: none; /* Remove border */
+  border-radius: 5px;
+  padding: 10px 20px; 
+  transition: background 0.3s ease; 
+}
+
+.contact button:hover {
+  background: #005f51; 
 }
 
 .contact .info .email,
@@ -1467,7 +1542,7 @@ button {
 
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-  border-color: #ffc451;
+  border-color: #eba415;
 }
 
 .contact .php-email-form input {
@@ -1479,7 +1554,7 @@ button {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #ffc451;
+  background:linear-gradient(rgb(227, 177, 49),rgb(240, 170, 6));
   border: 0;
   padding: 10px 24px;
   color: #151515;
@@ -1488,7 +1563,7 @@ button {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #e16e09;
+  background: linear-gradient(orange,rgb(231, 49, 49));
   font-weight: 600;
   color:#fff;
 }
