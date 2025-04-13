@@ -1488,7 +1488,9 @@ button {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #ffcd6b;
+  background: #e16e09;
+  font-weight: 600;
+  color:#fff;
 }
 
 @keyframes animate-loading {
