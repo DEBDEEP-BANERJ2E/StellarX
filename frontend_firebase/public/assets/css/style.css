@@ -1162,7 +1162,7 @@ button {
 
 .counts .content p {
   margin-bottom: 0;
-  color: #292929;
+  color: #181818;
   font-weight: 500;
   font-family: 'Courier New', Courier, monospace;
 }
@@ -1175,7 +1175,7 @@ button {
 .counts .content .count-box i {
   display: block;
   font-size: 36px;
-  color: #2222e2;
+  color: #0e0ae8;
   float: left;
 }
 
@@ -1184,7 +1184,7 @@ button {
   line-height: 30px;
   display: block;
   font-weight: 700;
-  color: #221f1f;
+  color: #0a0a0a;
   margin-left: 50px;
 }
 
@@ -1193,7 +1193,7 @@ button {
   margin: 0 0 0 50px;
   font-family: "Raleway", sans-serif;
   font-size: 14px;
-  color: #3b3b3b;
+  color: #f6eded;
 }
 
 .counts .content .count-box a {
@@ -1234,8 +1234,17 @@ button {
 
 .achievement {
   opacity: 0; /* Start hidden */
-  transition: opacity 0.5s ease-in-out; /* Transition effect */
+  transition: opacity 0.5s ease-in-out; 
 }
+
+  .achievement-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}/* Transition effect */
 
 .achievement.visible {
   opacity: 1; 
@@ -1247,7 +1256,8 @@ button {
 }
 
 .achievement:hover {
-  transform: scale(1); 
+  transform: scale(1.05); 
+  box-shadow: 0 6px 12px black;
 }
 
 .achievement {
@@ -1281,6 +1291,63 @@ button {
   transform: translateY(0); 
 }
 
+#achievement {
+  position: relative;
+  overflow: hidden;
+}
+
+#achievement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+  opacity: 0.5;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.achievement-title {
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #ffc451;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.achievement-title:hover::after {
+  transform: translateX(0);
+}
+
+.achievement-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.achievement-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.achievement-section .row i{
+  color: #000;
+}
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
