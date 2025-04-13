@@ -1051,7 +1051,7 @@ button {
 
 .counts .content p {
   margin-bottom: 0;
-  color: #292929;
+  color: #181818;
   font-weight: 500;
   font-family: 'Courier New', Courier, monospace;
 }
@@ -1064,7 +1064,7 @@ button {
 .counts .content .count-box i {
   display: block;
   font-size: 36px;
-  color: #2222e2;
+  color: #0e0ae8;
   float: left;
 }
 
@@ -1073,7 +1073,7 @@ button {
   line-height: 30px;
   display: block;
   font-weight: 700;
-  color: #221f1f;
+  color: #0a0a0a;
   margin-left: 50px;
 }
 
@@ -1082,7 +1082,7 @@ button {
   margin: 0 0 0 50px;
   font-family: "Raleway", sans-serif;
   font-size: 14px;
-  color: #3b3b3b;
+  color: #f6eded;
 }
 
 .counts .content .count-box a {
