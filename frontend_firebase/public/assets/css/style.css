@@ -439,9 +439,14 @@ h6 {
 #hero .icon-box {
   padding: 30px 20px;
   transition: ease-in-out 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid #ecd210;
   height: 100%;
   text-align: center;
+}
+
+
+#hero .icon-box:hover{
+  box-shadow: 0 4px 8px #f1c605;
 }
 
 #hero .icon-box i {
@@ -449,6 +454,7 @@ h6 {
   line-height: 1;
   color: #ffc451;
 }
+
 
 #hero .icon-box h3 {
   font-weight: 700;
@@ -466,6 +472,14 @@ h6 {
 
 #hero .icon-box h3 a:hover {
   color: #ffc451;
+}
+
+#hero .icon-box p{
+  color: #b7a2a2;
+}
+
+#hero .icon-box p:hover{
+  color: #efef0b;
 }
 
 #hero .icon-box:hover {
